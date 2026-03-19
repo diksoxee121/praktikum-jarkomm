@@ -9,20 +9,20 @@ Setelah diinisiasi, semua paket jaringan yang aktif di perangkat akan terekam ol
 Untuk mempermudah analisis, diterapkan display filter http pada Wireshark agar hanya paket berprotokol HTTP yang muncul. Dari hasil penangkapan paket, terdeteksi bahwa client mengeksekusi request GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1. Hal ini mengindikasikan pemanggilan file HTTP-wireshark-file1.html dari server gaia.cs.umass.edu via metode GET. Metode ini bertugas meminta suatu resource atau halaman web dari server. Selain itu, terlihat pula informasi IP pengirim (client) yakni 192.168.1.8 dan IP tujuan (server) 128.119.245.12, di mana keduanya berkomunikasi melalui protokol HTTP versi 1.1. Server akan merespons permintaan tersebut dengan menyuplai halaman web yang dituju.
 
 ## lampiran
-![hasil Percobaan](../praktikum-jarkomm/assets/image/week3a.jpg)
+![hasil Percobaan](../assets/image/week3a.png)
 
 Selanjutnya browser digunakan untuk membuka halaman yang telah disediakan pada modul praktikum, yaitu:
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html
 Ketika halaman tersebut dibuka, browser akan mengirimkan request HTTP kepada server untuk mengambil file HTML tersebut. Server kemudian memberikan response berupa halaman web yang diminta oleh client.
 
 ## lampiran 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3b.jpg)
+![hasil percobaan](../assets/image/week3b.png)
 
 Setelah halaman berhasil dibuka, kembali ke aplikasi Wireshark kemudian lakukan filter pada kolom Display Filter dengan mengetikkan: http
 Filter ini digunakan agar Wireshark hanya menampilkan paket yang menggunakan protokol HTTP sehingga paket yang dianalisis lebih mudah ditemukan.
 
 ## lampiran 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3c.jpg)
+![hasil percobaan](../assets/image/week3c.png)
 
 Berdasarkan hasil capture pada Wireshark terlihat bahwa client mengirimkan permintaan HTTP kepada server untuk mengambil file halaman web. Pada bagian Hypertext Transfer Protocol terlihat request:
 GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1
@@ -34,13 +34,13 @@ Dari paket tersebut juga terlihat bahwa komunikasi menggunakan protokol HTTP/1.1
 Tahap ini bertujuan untuk meneliti penanganan HTTP saat mengunduh dokumen HTML berskala besar atau memuat teks panjang. Pengamatan dieksekusi dengan membuka tautan http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html di browser selagi Wireshark menjalankan capture. Pasca halaman termuat, filter http kembali diaplikasikan. Berdasarkan tangkapan Wireshark, tercatat request berupa GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1. Ini membuktikan client meminta file berukuran panjang tersebut dari server gaia.cs.umass.edu dengan metode GET. Identitas IP yang terlibat masih konstan, yaitu 192.168.1.8 untuk client dan 128.119.245.12 untuk server. Sebagai balasan, server mengeluarkan status HTTP/1.1 200 OK (text/html), yang berarti permintaan berhasil diproses dan file HTML dikirim ke client. Hasil akhir pada browser menampilkan teks "The Bill of Rights". Ini mengonfirmasi bahwa skema protokol HTTP sukses menarik resource utuh dari server, di mana metode GET dari client dibalas dengan data web yang sesuai.http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
 
 ## lampiran
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3d.jpg)
+![hasil percobaan](../assets/image/week3d.png)
 Setelah halaman tersebut dibuka, Wireshark akan menangkap paket komunikasi yang terjadi antara client dan server. Kemudian dilakukan filter dengan mengetik http pada kolom display filter agar hanya paket HTTP yang ditampilkan.
 
 ## lampiran 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3e.jpg)
+![hasil percobaan](../assets/image/week3e.png)
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3f.jpg)
+![hasil percobaan](../assets/image/week3f.png)
 
 Berdasarkan hasil capture pada Wireshark terlihat paket request:
 GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1
@@ -54,14 +54,14 @@ Hal ini menunjukkan bahwa protokol HTTP digunakan untuk mengambil dokumen dari s
 Skenario selanjutnya berfokus pada halaman HTML yang menyertakan objek tambahan di dalamnya (embedded objects), seperti gambar. Langkah praktikum mengharuskan akses ke tautan http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html via browser. Setelah memfilter paket menjadi http saja , Wireshark merekam adanya serangkaian request GET. Request perdana, GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1, bertujuan mengunduh kerangka HTML utama dari server gaia.cs.umass.edu. Setelah HTML tersebut terpindai oleh browser, terdeteksi request susulan guna mengunduh elemen gambar yang tertanam di halaman tersebut, yaitu pearson.png dan gambar 8E_cover_small.jpg. Server lantas membalas setiap permintaan objek tersebut dengan kode HTTP/1.1 200 OK, menandakan seluruh embedded object berhasil dikirimkan ke client. Dapat ditarik kesimpulan bahwa pemuatan halaman web yang mengandung embedded objects akan memicu browser untuk melepaskan banyak GET requests guna merangkai halaman beserta isinya secara menyeluruh
 
 ## lampiran
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3g.jpg)
+![hasil percobaan](../assets/image/week3g.png)
 
 Setelah halaman tersebut dibuka, Wireshark akan menangkap paket komunikasi yang terjadi antara client dan server. Kemudian dilakukan filter dengan mengetik http pada kolom display filter agar hanya paket HTTP yang ditampilkan.
 
 ## lampiran 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3h.jpg)
+![hasil percobaan](../assets/image/week3h.png)
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3h.jpg)
+![hasil percobaan](../assets/image/week3i.png)
 
 Berdasarkan hasil capture pada Wireshark terlihat beberapa paket request GET. Request pertama adalah:
 GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1
@@ -73,21 +73,21 @@ Dari hasil tersebut dapat disimpulkan bahwa ketika sebuah halaman HTML memiliki 
 
 Sesi terakhir membahas alur autentikasi HTTP pada situs yang diproteksi oleh kredensial (username dan password). Pengujian dilakukan dengan mengakses URL http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html. Browser otomatis memunculkan pop-up form login otorisasi yang menuntut input username serta password. Halaman baru akan bisa dimuat seutuhnya setelah user memasukkan kombinasi sandi yang valid 
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3i.jpg)
+![hasil percobaan](../assets/image/week3j.png)
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3j.jpg)
+![hasil percobaan](../assets/image/week3k.png)
 
 Ketika halaman tersebut dibuka, browser akan menampilkan form login yang meminta username dan password untuk mengakses halaman tersebut. Setelah memasukkan username dan password yang benar, halaman web kemudian berhasil ditampilkan.
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3k.jpg)
+![hasil percobaan](../assets/image/week3l.png)
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3l.jpg)
+![hasil percobaan](../assets/image/week3m.png)
 
 Selama proses tersebut, Wireshark menangkap komunikasi antara client dan server. Setelah dilakukan filter dengan mengetik http pada kolom display filter, terlihat beberapa paket HTTP yang menunjukkan proses autentikasi.
 Berdasarkan hasil capture terlihat request:
 Dari sisi Wireshark, jejak pertukaran datanya direkam untuk dianalisis. Awalnya, terlihat client mencoba menembus lewat perintah GET /wireshark-labs/protected_pages/HTTP-wireshark-file5.html HTTP/1.1. Karena rute tersebut terproteksi, server menolak akses dengan status HTTP/1.1 401 Unauthorized. Pesan error ini merupakan indikator bahwa server mewajibkan proses autentikasi. Setelah pengguna menyuplai kredensial di browser, sistem kembali melontarkan GET request, namun kali ini disisipkan header Authorization: Basic yang membawa informasi otorisasi. Berhubung login berhasil, server lalu merespon dengan HTTP/1.1 200 OK, memberi lampu hijau bagi client untuk menelusuri laman yang dikunci tersebut.
 
-![hasil percobaan](../praktikum-jarkomm/assets/image/week3m.jpg)
+
 
 ## SEKIAN TERIMA KASIHHH 
 
