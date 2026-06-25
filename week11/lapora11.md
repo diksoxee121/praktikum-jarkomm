@@ -30,16 +30,16 @@ Dalam protokol DHCP, ada 4 tahap untuk memberikan alamat IP kepada klien, yaitu
 3. Buka Terminal/CMD sebagai Administrator.
 4. Jalankan perintah `ipconfig /release` untuk melepaskan IP saat ini.
 
-![ipconfig /release](../Assets/Modul11-1.png)
+![ipconfig /release](../week11/Modul11-1.png)
 
 5. Mulai tangkap paket-paket yang akan muncul di Wireshark.
 6. Jalankan perintah `ipconfig /renew` untuk meminta IP baru dari server.
 
-![ipconfig /renew](../Assets/Modul11-2.png)
+![ipconfig /renew](../week11/Modul11-2.png)
 
 7. Setelah beberapa detik, *stop capture* di Wireshark.
 
-![hasil capture](../Assets/Modul11-3.png)
+![hasil capture](../week11/Modul11-3.png)
 
 ---
 

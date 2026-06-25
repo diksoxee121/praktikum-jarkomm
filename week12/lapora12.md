@@ -28,7 +28,7 @@ Struktur dasar header ICMP terdiri dari 3 field utama yang selalu ada di setiap 
 
 Skenario dijalankan dengan mengeksekusi perintah `ping -n 10 www.ust.hk` pada terminal Windows, yang memicu pertukaran pesan kueri dua arah secara berurutan.
 
-![ping -n 10 www.ust.hk](../Assets/Modul12-1.png)
+![ping -n 10 www.ust.hk](../week12/Modul12-1.png)
 
 ### 1. Alur Transmisi Paket
 Berdasarkan hasil *capture*, proses pengujian konektivitas ke `www.ust.hk` (`143.89.209.9`) dari alamat IP lokal host (`10.218.2.21`) memicu pertukaran pesan kueri ICMP berpasangan secara sekuensial.
@@ -46,7 +46,7 @@ Paket yang dikirimkan oleh komputer klien menuju server target:
 * **Sequence Number (LE):** `15105` (`0x3b01`)
 * **Payload Data:** Berisi beban data standar sebesar 32 byte.
 
-![ICMP Echo Request](../Assets/Modul12-2.png)
+![ICMP Echo Request](../week12/Modul12-2.png)
 
 #### **B. Paket ICMP Echo Reply (Inbound)**
 Paket respon balik yang dikirimkan oleh server `143.89.209.9` ke komputer klien:
@@ -69,7 +69,7 @@ Skenario kedua dilakukan dengan mengeksekusi perintah `tracert www.inria.fr`. In
 
 ### 1. Hasil Eksekusi Utilitas `tracert` pada Terminal
 
-![tracert](../Assets/Modul12-7.png)
+![tracert](../week12/Modul12-7.png)
 
 Setelah masuk ke `C:\Windows\System32` dan mnggunakan command prompt atau PowerShell, hasil log konsol PowerShell menunjukkan proses pelacakan berhasil mengidentifikasi rute hop awal dengan informasi latensi sebagai berikut:
 * **Hop 1:** Menuju default gateway jaringan lokal kampus di IP **10.252.241.1** dengan catatan waktu respons super cepat: `1 ms`, `1 ms`, `1 ms`. Ini menunjukkan efisiensi tinggi pada segmen interkoneksi lokal (LAN).
@@ -83,7 +83,7 @@ Melalui analisis *packet-trace* yang ditangkap bersamaan di Wireshark, ditemukan
 * **Type:** `8` | **Code:** `0`
 * **Manipulasi TTL:** Paket pertama dikirimkan dengan properti lapisan IP berupa parameter **TTL (Time to Live) = 1**. Paket berikutnya dinaikkan menjadi TTL = 2, TTL = 3, dan seterusnya secara inkremental.
 
-![alt text](../Assets/Modul12-8.png)
+![alt text](../week12/Modul12-8.png)
 
 #### **B. Paket Respons dari Router Perantara**
 * Ketika paket dengan TTL = 1 sampai di router lompatan pertama, nilai TTL tersebut dikurangi 1 oleh prosesor router sehingga menjadi **0**.
